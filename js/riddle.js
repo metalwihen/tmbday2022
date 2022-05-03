@@ -179,4 +179,9 @@ function setCowSpeak(msg){
 
 function showVictory(){
   setCowSpeak("Too many obstacles... I'll go eat the neighbour's plants. Also, Happy Birthday!");
+
+  showSnackbar("You win! Hooray!");
+  
+  var audio = new Audio('assets/audio/moo.mp3');
+  audio.play();
 }
