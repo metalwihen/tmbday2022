@@ -42,7 +42,7 @@ type="text/css"/>
         <h1>TMBDAY 2022</h1>
         <p> Hello! The name of the game?<br/>Keep the cow away from your plants.</p>
         <p> You have 6 riddles. Solve one, get a block. <br/>Once you barricade your plants, you win!</p>
-        <p> Use your keyboard to answer the riddle. Use the arrow-keys to move your blocks."
+        <p> Use your keyboard to answer the riddle. Use the arrow-keys to move your blocks.
         <p><span id="intro-text"/></p>
         <button id="number-button-1" class="number-button">1</button>
         <button id="number-button-2" class="number-button">2</button>
@@ -57,7 +57,7 @@ type="text/css"/>
           <p><span id="riddle-question-text"/></p>
           <p><input id="riddle-answer-input" type="text" placeholder="Enter your answer here..." /></p>
           <canvas id="riddle-canvas" class="next"></canvas>
-          <button id="riddle-drop-button" onclick="submitAnswer()" class="play-button"><span id="riddle-drop-button-text"/></button>
+          <button id="riddle-drop-button" class="play-button"><span id="riddle-drop-button-text"/></button>
         </div>
       </div>
     </div>
@@ -65,6 +65,7 @@ type="text/css"/>
 
   <div id="snackbar" class="gone"><span id="snackbar-text"/></div>
 
+  <script type="text/javascript" src="js/tetris.js"></script>
   <script type="text/javascript" src="js/riddle.js"></script>
 
 </body

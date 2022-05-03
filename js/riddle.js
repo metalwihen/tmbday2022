@@ -1,4 +1,4 @@
-const KEY = {
+const _KEY = {
   ENTER: 13,
 };
 
@@ -22,6 +22,7 @@ var answerInput = document.getElementById("riddle-answer-input");
 addRiddles();
 setupListenerRiddleInput();
 setupListenerNumberButtons();
+setupListenerDropButtons();
 configureCurrentRiddle(currentRiddle);
 
 function setupListenerNumberButtons() {
@@ -39,7 +40,7 @@ function setupListenerNumberButtons() {
 
 function setupListenerRiddleInput(){
   answerInput.addEventListener('keyup',function(e){
-    if (e.keyCode === KEY.ENTER) {    	
+    if (e.keyCode === _KEY.ENTER) {    	
       const userAnswer = answerInput.value.trim();
       const correctAnswer = getCurrentRiddle().get("answer"); 
 
@@ -56,6 +57,24 @@ function setupListenerRiddleInput(){
       }
     }
   });
+}
+
+function setupListenerDropButtons() {
+    const buttonId = "riddle-drop-button";
+    let button = document.getElementById(buttonId);
+    button.addEventListener("click", function(event) {
+      switch(currentRiddle){
+        case 1: drawBlock1(); break;
+        case 2: drawBlock2(); break;
+        case 3: drawBlock3(); break;
+        case 4: drawBlock4(); break;
+        case 5: drawBlock5(); break;
+        case 6: drawBlock6(); break;
+      }
+      if(solvedRiddles.size == 6){
+        showVictory();
+      }
+    });
 }
 
 function getCurrentRiddle(){
@@ -156,6 +175,8 @@ function addRiddles(){
 function setCowSpeak(msg){
   const cowSpeakText = document.getElementById("cow-speak-text");
   cowSpeakText.textContent =msg;
-  // "You win! I'll go eat the neighbour's plants"
 }
 
+function showVictory(){
+  setCowSpeak("Too many obstacles... I'll go eat the neighbour's plants. Also, Happy Birthday!");
+}
