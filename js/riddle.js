@@ -66,6 +66,8 @@ function configureCurrentRiddle(number){
   currentRiddle = number;
   console.log("new-current = " + number);
 
+  const qTitleSpan = document.getElementById("riddle-title-text");
+  qTitleSpan.textContent = getCurrentRiddle().get("title");
   const questionSpan = document.getElementById("riddle-question-text");
   questionSpan.textContent = getCurrentRiddle().get("question");
 
@@ -117,6 +119,7 @@ function addRiddles(){
   
   // Riddle #1
   const riddle1 = new Map();
+  riddle1.set('title',"Resilience");
   riddle1.set('question',"What's capital of Canada?");
   riddle1.set('answer',"Ottawa");
   riddle1.set('msg_drop_button',"Drop Block #1")
@@ -125,6 +128,7 @@ function addRiddles(){
   
   // Riddle #2
   const riddle2 = new Map();
+  riddle2.set('title',"Discipline");
   riddle2.set('question',"What's capital of Canada?");
   riddle2.set('answer',"Ottawa");
   riddle2.set('msg_drop_button',"Drop Block #2")
@@ -134,6 +138,7 @@ function addRiddles(){
   
   // Riddle #3
   const riddle3 = new Map();
+  riddle3.set('title',"Bravery");
   riddle3.set('question',"What's capital of Canada?");
   riddle3.set('answer',"Ottawa");
   riddle3.set('msg_drop_button',"Drop Block #3")
@@ -146,5 +151,11 @@ function addRiddles(){
   riddles.set(buttonNumbers[3], riddle3);
   riddles.set(buttonNumbers[4], riddle3);
   riddles.set(buttonNumbers[5], riddle3);
+}
+
+function setCowSpeak(msg){
+  const cowSpeakText = document.getElementById("cow-speak-text");
+  cowSpeakText.textContent =msg;
+  // "You win! I'll go eat the neighbour's plants"
 }
 

@@ -17,9 +17,16 @@ input {
   padding: 10px;
 }
 
+.banner-container{
+  margin: 8px;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: 360px 240px;
+  grid-template-columns: 420px 280px;
   justify-content: center;
 }
 
