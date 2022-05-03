@@ -1,0 +1,55 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+rel="stylesheet"/>
+  <link 
+href='https://fonts.googleapis.com/css?family=Open Sans' 
+rel='stylesheet'/>
+  <link 
+href="css/styles.css"
+rel="stylesheet"
+type="text/css"/>
+  <link 
+href="css/snackbar.css"
+rel="stylesheet"
+type="text/css"/>
+
+</head>
+
+<body>
+
+  <div class="grid">
+    <div class="left-column">
+      <canvas id="board" class="game-board"></canvas>
+    </div>
+    <div class="right-column">
+      <div>
+        <h1>TMBDAY 2022</h1>
+        <p><span id="intro-text"/></p>
+        <button id="number-button-1" class="number-button">1</button>
+        <button id="number-button-2" class="number-button">2</button>
+        <button id="number-button-3" class="number-button">3</button>
+        <br/>
+        <button id="number-button-4" class="number-button">4</button>
+        <button id="number-button-5" class="number-button">5</button>
+        <button id="number-button-6" class="number-button">6</button>
+        <hr/>
+        <div id="riddle-container">
+          <p><span id="riddle-question-text"/></p>
+          <p><input id="riddle-answer-input" type="text" placeholder="Enter your answer here..." /></p>
+          <canvas id="riddle-canvas" class="next"></canvas>
+          <button id="riddle-drop-button" onclick="submitAnswer()" class="play-button"><span id="riddle-drop-button-text"/></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="snackbar" class="gone"><span id="snackbar-text"/></div>
+
+  <script type="text/javascript" src="js/riddle.js"></script>
+
+</body
+</html>

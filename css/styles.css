@@ -1,0 +1,80 @@
+body {
+  background-color: #A4CC44
+}
+
+p {
+  font-family: 'Open Sans';
+  font-size: 12px;
+  font-style: bold;
+}
+
+h1,button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 360px 240px;
+  justify-content: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 4px;
+  padding: 8px;
+  justify-content: center;
+  text-align: center;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: #fff;
+  margin: 4px;
+  justify-content: center;
+}
+
+.game-board {
+  border: solid 2px;
+}
+
+.play-button {
+  background-color: #4caf50;
+  font-size: 14px;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+.play-button:disabled {
+  background-color: #B3B3B3;
+  font-size: 14px;
+  padding: 12px 25px;
+}
+
+.number-button {
+  background-color: #4caf50;
+  font-size: 12px;
+  padding: 8px 16px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.number-button-current{
+  background-color: #FFDA00;
+  font-size: 12px;
+  padding: 8px 16px;
+  margin: 4px;
+}
+
+.riddle-answer {
+  padding: 4px;
+}
