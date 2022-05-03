@@ -41,14 +41,14 @@ function setupListenerNumberButtons() {
 function setupListenerRiddleInput(){
   answerInput.addEventListener('keyup',function(e){
     if (e.keyCode === _KEY.ENTER) {    	
-      const userAnswer = answerInput.value.trim();
+      const userAnswer = answerInput.value.trim().toLowerCase();
       const correctAnswer = getCurrentRiddle().get("answer"); 
 
       console.log("userAnswer = "+userAnswer);
       console.log("correctAnswer = "+correctAnswer);
 
       answerInput.value = ''; 
-      if(userAnswer == correctAnswer){
+      if(correctAnswer.includes(userAnswer)){
         solvedRiddles.add(currentRiddle);
         configureCurrentRiddle(currentRiddle);
         showSnackbar(getCurrentRiddle().get("msg_success"));
@@ -96,7 +96,7 @@ function configureCurrentRiddle(number){
   const dropButton = document.getElementById("riddle-drop-button");
   
   if(solvedRiddles.has(number)){
-    answerInput.value = getCurrentRiddle().get("answer");
+    answerInput.value = getCurrentRiddle().get("answer")[0].toUpperCase();
     answerInput.disabled = true;
 
     dropButton.disabled = false;
@@ -136,40 +136,67 @@ function showSnackbar(msg){
 function addRiddles(){
   // TODO: Canvas block?
   
-  // Riddle #1
+  // Riddle #1 - Done
   const riddle1 = new Map();
-  riddle1.set('title',"Resilience");
-  riddle1.set('question',"What's capital of Canada?");
-  riddle1.set('answer',"Ottawa");
+  riddle1.set('title',"Multilingual");
+  riddle1.set('question',"Handwritten words that hoped to guide.\nBut instead brought joy to the visiting side.\n\nWhat were the words?");
+  riddle1.set('answer',["chammanthi podi","chammanthippodi","podi"]);
   riddle1.set('msg_drop_button',"Drop Block #1")
-  riddle1.set('msg_success',"You got it!");
-  riddle1.set('msg_failure',"Almost There. Starts with an O!");
+  riddle1.set('msg_success',"That's correct! You got the block!");
+  riddle1.set('msg_failure',"Oh no. That's not right!");
   
-  // Riddle #2
+  // Riddle #2 - Done
   const riddle2 = new Map();
-  riddle2.set('title',"Discipline");
-  riddle2.set('question',"What's capital of Canada?");
-  riddle2.set('answer',"Ottawa");
+  riddle2.set('title',"Resilience");
+  riddle2.set('question',"The symptoms were strong but you prevailed.\nWhat was the name of this perilous trail?");
+  riddle2.set('answer',["phulara ridge trek","phulara ridge"]);
   riddle2.set('msg_drop_button',"Drop Block #2")
-  riddle2.set('msg_success',"You got it!");
-  riddle2.set('msg_failure',"Almost There. Starts with an O!");
+  riddle2.set('msg_success',"That's correct! You got the block!");
+  riddle2.set('msg_failure',"Oh no. That's not right!");
 
   
-  // Riddle #3
+  // Riddle #3 - Done
   const riddle3 = new Map();
-  riddle3.set('title',"Bravery");
-  riddle3.set('question',"What's capital of Canada?");
-  riddle3.set('answer',"Ottawa");
+  riddle3.set('title',"Nostalgia");
+  riddle3.set('question',"In this place, we had much fun.\nWe swam. We ran. We tanned in the sun.\nMuch has changed as decades have passed.\nThe memories however will surely last.\n\nDo you know where this is?");
+  riddle3.set('answer',["udumbanoor","dam"]);
   riddle3.set('msg_drop_button',"Drop Block #3")
-  riddle3.set('msg_success',"You got it!");
-  riddle3.set('msg_failure',"Almost There. Starts with an O!");
+  riddle3.set('msg_success',"That's correct! You got the block!");
+  riddle3.set('msg_failure',"Oh no. That's not right!");
+  
+  // Riddle #4 - Done
+  const riddle4 = new Map();
+  riddle4.set('title',"Skill");
+  riddle4.set('question',"A hand gesture made by one to another.\nMuch like sending flying kisses.\nBut it isn't romantic.\nA visual language, what does it mean?");
+  riddle4.set('answer',["thanks","thank you"]);
+  riddle4.set('msg_drop_button',"Drop Block #4")
+  riddle4.set('msg_success',"That's correct! You got the block!");
+  riddle4.set('msg_failure',"Oh no. That's not right!");
+  
+  // Riddle #5
+  const riddle5 = new Map();
+  riddle5.set('title',"Trivia");
+  riddle5.set('question',"A creature swam against the current.\nOne day, it reached the top of a waterfall.\nThe gods were impressed and rewarded it.\nAnd now this once-feeble creature stands tall.\n\nWho's that pokemon inspired by this chinese tale?");
+  riddle5.set('answer',["magikarp"]);
+  riddle5.set('msg_drop_button',"Drop Block #5")
+  riddle5.set('msg_success',"That's correct! You got the block!");
+  riddle5.set('msg_failure',"Oh no. That's not right!");
 
+  // Riddle #6
+  const riddle6 = new Map();
+  riddle6.set('title',"?!");
+  riddle6.set('question',"...");
+  riddle6.set('answer',["ellipsis"]);
+  riddle6.set('msg_drop_button',"Drop Block #6")
+  riddle6.set('msg_success',"That's correct! You got the block!");
+  riddle6.set('msg_failure',"Oh no. That's not right!");
+  
   riddles.set(buttonNumbers[0], riddle1);
   riddles.set(buttonNumbers[1], riddle2);
   riddles.set(buttonNumbers[2], riddle3);
-  riddles.set(buttonNumbers[3], riddle3);
-  riddles.set(buttonNumbers[4], riddle3);
-  riddles.set(buttonNumbers[5], riddle3);
+  riddles.set(buttonNumbers[3], riddle4);
+  riddles.set(buttonNumbers[4], riddle5);
+  riddles.set(buttonNumbers[5], riddle6);
 }
 
 function setCowSpeak(msg){

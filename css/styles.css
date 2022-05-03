@@ -17,6 +17,10 @@ input {
   padding: 10px;
 }
 
+span {
+  white-space: pre-line;
+}
+
 .banner-container{
   margin: 8px;
   display: inline-block;
@@ -26,7 +30,7 @@ input {
 
 .grid {
   display: grid;
-  grid-template-columns: 420px 280px;
+  grid-template-columns: 420px 320px;
   justify-content: center;
 }
 
@@ -37,7 +41,7 @@ input {
   background-color: #fff;
   margin: 4px;
   padding: 8px;
-  justify-content: center;
+  justify-content: top;
   text-align: center;
 }
 
