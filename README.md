@@ -4,7 +4,8 @@ Every year, I make a small game for my sister's birthday.
 
 This is the game made for her birthday on 2022. 
 
-![video](/screenshots/recording.mp4)
+[Video Link](/screenshots/recording.mp4)
+
 ![img](/screenshots/screenshot.png)
 
 
